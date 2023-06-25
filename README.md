@@ -1,3 +1,1 @@
-# Mastreing-Embedded-Systems-Online-
-## projects
-### Omar_Mohammad
+# Mastreing-Embedded-Systems-Online
