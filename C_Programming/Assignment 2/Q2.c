@@ -1,4 +1,5 @@
 //Write C program to check Vowel or Constant
+#include<stdio.h>
 int main ()
 {
 	char letter;
