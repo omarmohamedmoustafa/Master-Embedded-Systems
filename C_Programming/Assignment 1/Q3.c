@@ -9,6 +9,6 @@ int main()
 	fflush(stdout);
 	scanf("%f\n",&s);
 	scanf("%f",&d);
-
 	printf("Product = %f",s*d);
+	return 0;
 }
