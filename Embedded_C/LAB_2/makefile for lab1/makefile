@@ -1,19 +1,19 @@
 #general makefile
+
 CC=arm-none-eabi-
-CFLAGS= -mcpu=cortex-m3 -gdwarf-2 -I . -c
+CFLAGS=-mcpu=arm926ej-s -g -I . -c
 SRC=  $(wildcard *.c)
-OBJS= $(SRC:.c=.o)  
+OBJS= $(SRC:.c=.o) 
 ASM= $(wildcard *.s)
 ASM_OBJ= $(ASM:.s=.o)
-LNK_SCR=$(wildcard *.ld)
-PROJECT_NAME=LAB2
-all: $(PROJECT_NAME).bin
+PROJECT_NAME=LAB1
+all: LAB1.bin
 	@echo "===========================Done==========================="
 
 $(PROJECT_NAME).bin :$(PROJECT_NAME).elf
 	$(CC)objcopy -O binary $< $@
 
-%.o: %.s
+startup.o: startup.s
 	$(CC)as.exe $(CFLAGS) $< -o $@
 
 %.o: %.c
@@ -21,7 +21,7 @@ $(PROJECT_NAME).bin :$(PROJECT_NAME).elf
 
 	
 $(PROJECT_NAME).elf : $(OBJS) $(ASM_OBJ)
-	$(CC)ld.exe -T $(LNK_SCR) $(ASM_OBJ) $(OBJS) -o $@ -Map=Map_file.map
+	$(CC)ld.exe -T linker_script.ld startup.o app.o uart.o -o $@ -Map=Mapfile.map
 
 clean:
 	rm *.elf *.bin *.map
