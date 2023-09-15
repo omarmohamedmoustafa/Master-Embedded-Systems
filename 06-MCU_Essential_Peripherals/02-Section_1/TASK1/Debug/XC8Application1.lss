@@ -1,0 +1,288 @@
+
+XC8Application1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000006c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001fa  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  000001fa  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  00000229  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000020  00000000  00000000  00000237  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000009a4  00000000  00000000  00000257  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000572  00000000  00000000  00000bfb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000305  00000000  00000000  0000116d  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000024  00000000  00000000  00001474  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000196  00000000  00000000  00001498  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000240  00000000  00000000  0000162e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000010  00000000  00000000  0000186e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  00000178  00000178  000001ec  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001880  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.main    000000f6  0000006c  0000006c  000000e0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.__dummy_fini 00000002  00000180  00000180  000001f4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.__dummy_funcs_on_exit 00000002  00000182  00000182  000001f6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.__dummy_simulator_exit 00000002  00000184  00000184  000001f8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.exit    00000016  00000162  00000162  000001d6  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text._Exit   00000004  0000017c  0000017c  000001f0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+   8:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+   c:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  10:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  14:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  18:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  1c:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  20:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  24:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  28:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  2c:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  30:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  34:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  38:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  3c:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  40:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  44:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  48:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  4c:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+  50:	0c 94 bc 00 	jmp	0x178	; 0x178 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <_etext>
+  64:	0c 94 b1 00 	jmp	0x162	; 0x162 <exit>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>
+
+Disassembly of section .text:
+
+00000178 <__bad_interrupt>:
+ 178:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.main:
+
+0000006c <main>:
+
+
+int main(void)
+{
+	
+	DDRA_REG = 0xFF;
+  6c:	8f ef       	ldi	r24, 0xFF	; 255
+  6e:	8a bb       	out	0x1a, r24	; 26
+		
+    while(1)
+    {
+		SET_BIT(PORTA_REG,0);
+  70:	8b b3       	in	r24, 0x1b	; 27
+  72:	81 60       	ori	r24, 0x01	; 1
+  74:	8b bb       	out	0x1b, r24	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  76:	2f e7       	ldi	r18, 0x7F	; 127
+  78:	8a e1       	ldi	r24, 0x1A	; 26
+  7a:	96 e0       	ldi	r25, 0x06	; 6
+  7c:	21 50       	subi	r18, 0x01	; 1
+  7e:	80 40       	sbci	r24, 0x00	; 0
+  80:	90 40       	sbci	r25, 0x00	; 0
+  82:	e1 f7       	brne	.-8      	; 0x7c <main+0x10>
+  84:	00 c0       	rjmp	.+0      	; 0x86 <main+0x1a>
+  86:	00 00       	nop
+		_delay_ms(250) ;
+		CLR_BIT(PORTA_REG,0);
+  88:	8b b3       	in	r24, 0x1b	; 27
+  8a:	8e 7f       	andi	r24, 0xFE	; 254
+  8c:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,1);
+  8e:	8b b3       	in	r24, 0x1b	; 27
+  90:	82 60       	ori	r24, 0x02	; 2
+  92:	8b bb       	out	0x1b, r24	; 27
+  94:	2f e7       	ldi	r18, 0x7F	; 127
+  96:	8a e1       	ldi	r24, 0x1A	; 26
+  98:	96 e0       	ldi	r25, 0x06	; 6
+  9a:	21 50       	subi	r18, 0x01	; 1
+  9c:	80 40       	sbci	r24, 0x00	; 0
+  9e:	90 40       	sbci	r25, 0x00	; 0
+  a0:	e1 f7       	brne	.-8      	; 0x9a <main+0x2e>
+  a2:	00 c0       	rjmp	.+0      	; 0xa4 <main+0x38>
+  a4:	00 00       	nop
+		_delay_ms(250);  
+		CLR_BIT(PORTA_REG,1);
+  a6:	8b b3       	in	r24, 0x1b	; 27
+  a8:	8d 7f       	andi	r24, 0xFD	; 253
+  aa:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,2);
+  ac:	8b b3       	in	r24, 0x1b	; 27
+  ae:	84 60       	ori	r24, 0x04	; 4
+  b0:	8b bb       	out	0x1b, r24	; 27
+  b2:	2f e7       	ldi	r18, 0x7F	; 127
+  b4:	8a e1       	ldi	r24, 0x1A	; 26
+  b6:	96 e0       	ldi	r25, 0x06	; 6
+  b8:	21 50       	subi	r18, 0x01	; 1
+  ba:	80 40       	sbci	r24, 0x00	; 0
+  bc:	90 40       	sbci	r25, 0x00	; 0
+  be:	e1 f7       	brne	.-8      	; 0xb8 <main+0x4c>
+  c0:	00 c0       	rjmp	.+0      	; 0xc2 <main+0x56>
+  c2:	00 00       	nop
+		_delay_ms(250);
+		CLR_BIT(PORTA_REG,2);
+  c4:	8b b3       	in	r24, 0x1b	; 27
+  c6:	8b 7f       	andi	r24, 0xFB	; 251
+  c8:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,3);
+  ca:	8b b3       	in	r24, 0x1b	; 27
+  cc:	88 60       	ori	r24, 0x08	; 8
+  ce:	8b bb       	out	0x1b, r24	; 27
+  d0:	2f e7       	ldi	r18, 0x7F	; 127
+  d2:	8a e1       	ldi	r24, 0x1A	; 26
+  d4:	96 e0       	ldi	r25, 0x06	; 6
+  d6:	21 50       	subi	r18, 0x01	; 1
+  d8:	80 40       	sbci	r24, 0x00	; 0
+  da:	90 40       	sbci	r25, 0x00	; 0
+  dc:	e1 f7       	brne	.-8      	; 0xd6 <main+0x6a>
+  de:	00 c0       	rjmp	.+0      	; 0xe0 <main+0x74>
+  e0:	00 00       	nop
+		_delay_ms(250);
+		CLR_BIT(PORTA_REG,3);
+  e2:	8b b3       	in	r24, 0x1b	; 27
+  e4:	87 7f       	andi	r24, 0xF7	; 247
+  e6:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,4);
+  e8:	8b b3       	in	r24, 0x1b	; 27
+  ea:	80 61       	ori	r24, 0x10	; 16
+  ec:	8b bb       	out	0x1b, r24	; 27
+  ee:	2f e7       	ldi	r18, 0x7F	; 127
+  f0:	8a e1       	ldi	r24, 0x1A	; 26
+  f2:	96 e0       	ldi	r25, 0x06	; 6
+  f4:	21 50       	subi	r18, 0x01	; 1
+  f6:	80 40       	sbci	r24, 0x00	; 0
+  f8:	90 40       	sbci	r25, 0x00	; 0
+  fa:	e1 f7       	brne	.-8      	; 0xf4 <main+0x88>
+  fc:	00 c0       	rjmp	.+0      	; 0xfe <main+0x92>
+  fe:	00 00       	nop
+		_delay_ms(250);
+		CLR_BIT(PORTA_REG,4);
+ 100:	8b b3       	in	r24, 0x1b	; 27
+ 102:	8f 7e       	andi	r24, 0xEF	; 239
+ 104:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,5);
+ 106:	8b b3       	in	r24, 0x1b	; 27
+ 108:	80 62       	ori	r24, 0x20	; 32
+ 10a:	8b bb       	out	0x1b, r24	; 27
+ 10c:	2f e7       	ldi	r18, 0x7F	; 127
+ 10e:	8a e1       	ldi	r24, 0x1A	; 26
+ 110:	96 e0       	ldi	r25, 0x06	; 6
+ 112:	21 50       	subi	r18, 0x01	; 1
+ 114:	80 40       	sbci	r24, 0x00	; 0
+ 116:	90 40       	sbci	r25, 0x00	; 0
+ 118:	e1 f7       	brne	.-8      	; 0x112 <main+0xa6>
+ 11a:	00 c0       	rjmp	.+0      	; 0x11c <main+0xb0>
+ 11c:	00 00       	nop
+		_delay_ms(250);
+		CLR_BIT(PORTA_REG,5);
+ 11e:	8b b3       	in	r24, 0x1b	; 27
+ 120:	8f 7d       	andi	r24, 0xDF	; 223
+ 122:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,6);
+ 124:	8b b3       	in	r24, 0x1b	; 27
+ 126:	80 64       	ori	r24, 0x40	; 64
+ 128:	8b bb       	out	0x1b, r24	; 27
+ 12a:	2f e7       	ldi	r18, 0x7F	; 127
+ 12c:	8a e1       	ldi	r24, 0x1A	; 26
+ 12e:	96 e0       	ldi	r25, 0x06	; 6
+ 130:	21 50       	subi	r18, 0x01	; 1
+ 132:	80 40       	sbci	r24, 0x00	; 0
+ 134:	90 40       	sbci	r25, 0x00	; 0
+ 136:	e1 f7       	brne	.-8      	; 0x130 <main+0xc4>
+ 138:	00 c0       	rjmp	.+0      	; 0x13a <main+0xce>
+ 13a:	00 00       	nop
+		_delay_ms(250);
+		CLR_BIT(PORTA_REG,6);
+ 13c:	8b b3       	in	r24, 0x1b	; 27
+ 13e:	8f 7b       	andi	r24, 0xBF	; 191
+ 140:	8b bb       	out	0x1b, r24	; 27
+		SET_BIT(PORTA_REG,7);
+ 142:	8b b3       	in	r24, 0x1b	; 27
+ 144:	80 68       	ori	r24, 0x80	; 128
+ 146:	8b bb       	out	0x1b, r24	; 27
+ 148:	2f e7       	ldi	r18, 0x7F	; 127
+ 14a:	8a e1       	ldi	r24, 0x1A	; 26
+ 14c:	96 e0       	ldi	r25, 0x06	; 6
+ 14e:	21 50       	subi	r18, 0x01	; 1
+ 150:	80 40       	sbci	r24, 0x00	; 0
+ 152:	90 40       	sbci	r25, 0x00	; 0
+ 154:	e1 f7       	brne	.-8      	; 0x14e <main+0xe2>
+ 156:	00 c0       	rjmp	.+0      	; 0x158 <main+0xec>
+ 158:	00 00       	nop
+		_delay_ms(250);
+		CLR_BIT(PORTA_REG,7);
+ 15a:	8b b3       	in	r24, 0x1b	; 27
+ 15c:	8f 77       	andi	r24, 0x7F	; 127
+ 15e:	8b bb       	out	0x1b, r24	; 27
+ 160:	87 cf       	rjmp	.-242    	; 0x70 <main+0x4>
+
+Disassembly of section .text.__dummy_fini:
+
+00000180 <_fini>:
+ 180:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+00000182 <__funcs_on_exit>:
+ 182:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+00000184 <__simulator_exit>:
+ 184:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+00000162 <exit>:
+ 162:	ec 01       	movw	r28, r24
+ 164:	0e 94 c1 00 	call	0x182	; 0x182 <__funcs_on_exit>
+ 168:	0e 94 c0 00 	call	0x180	; 0x180 <_fini>
+ 16c:	ce 01       	movw	r24, r28
+ 16e:	0e 94 c2 00 	call	0x184	; 0x184 <__simulator_exit>
+ 172:	ce 01       	movw	r24, r28
+ 174:	0e 94 be 00 	call	0x17c	; 0x17c <_Exit>
+
+Disassembly of section .text._Exit:
+
+0000017c <_Exit>:
+ 17c:	0e 94 34 00 	call	0x68	; 0x68 <_exit>
