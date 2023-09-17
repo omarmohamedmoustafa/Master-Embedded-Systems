@@ -2,12 +2,10 @@
 ## Under supervision of Eng.Keroles Shenoda --learn-in-depth--
 # C_Programming Progress ![](https://geps.dev/progress/100)
 # Table of Contents
-
 1. [My first title](#Installations and Introduction)
 2. [My second title](#Version Control Systems -- GIT -- GitHub)
-## Installations and Introduction
-Some text.
-## Version Control Systems -- GIT -- GitHub
+## My first title
+## My second title
 # Embedded C  Progress ![](https://geps.dev/progress/100)
 # Data Structures  Progress ![](https://geps.dev/progress/100)
 # MCU Fundementals  Progress ![](https://geps.dev/progress/100)
