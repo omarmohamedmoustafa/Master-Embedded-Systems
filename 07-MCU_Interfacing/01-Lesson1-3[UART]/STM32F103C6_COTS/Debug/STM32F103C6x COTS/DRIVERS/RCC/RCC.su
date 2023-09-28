@@ -1,0 +1,6 @@
+RCC.c:25:6:RCC_vidEnablePeripheralClock	16	static
+RCC.c:45:6:RCC_vidDisablePeripheralClock	16	static
+RCC.c:65:10:MCAL_RCC_GET_PCLK1	8	static
+RCC.c:69:10:MCAL_RCC_GET_PCLK2	8	static
+RCC.c:73:10:MCAL_RCC_GET_HCLK	8	static
+RCC.c:77:10:MCAL_RCC_GET_SYS_CLK	4	static
